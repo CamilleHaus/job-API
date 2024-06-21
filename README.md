@@ -24,8 +24,8 @@ Esse projeto possui 3 rotas principais:
 
 ### Possíveis Erros - Legenda
 
-403 - UNAUTHORIZED - Token inválido
-403 - UNAUTHORIZED - Você não é o autor dessa opportunidade
+- 403 - UNAUTHORIZED - Token inválido
+- 403 - UNAUTHORIZED - Você não é o autor dessa opportunidade
 
 ```json
 {
@@ -50,8 +50,8 @@ Padrão de corpo:
 
 ```json
 {
-    "title": string,
-    "description": string
+    "title": "string",
+    "description": "string"
 }
 ```
 
@@ -59,10 +59,10 @@ Padrão de resposta (STATUS 201):
 
 ```json
 {
-    "id": number,
-    "title": string,
-    "description": string,
-    "userId": number
+    "id": "number",
+    "title": "string",
+    "description": "string",
+    "userId": "number"
 }
 ```
 
@@ -77,7 +77,7 @@ Padrão de corpo(opcional):
 
 ```json
 {
-    "id": number
+    "id": "number"
 }
 ```
 
@@ -85,10 +85,10 @@ Padrão de resposta (STATUS 200):
 
 ```json
 {
-    "id": number,
-    "title": string,
-    "description": string,
-    "userId": number,
+    "id": "number",
+    "title": "string",
+    "description": "string",
+    "userId": "number",
 }
 ```
 
@@ -103,10 +103,10 @@ Padrão de corpo:
 
 ```json
 {
-    "id": number,
-    "title": string,
-    "description": string,
-    "userId": number;
+    "id": "number",
+    "title": "string",
+    "description": "string",
+    "userId": "number",
 }
 ```
 
@@ -114,10 +114,10 @@ Padrão de resposta (STATUS 200):
 
 ```json
 {
-    "id": number,
-    "title": string,
-    "description": string,
-    "userId": number
+    "id": "number",
+    "title": "string",
+    "description": "string",
+    "userId": "number"
 }
 ```
 
@@ -132,8 +132,8 @@ Padrão de corpo:
 
 ```json
 {
-    "title?": string,
-    "description?": string
+    "title?": "string",
+    "description?": "string"
 }
 ```
 
@@ -141,10 +141,10 @@ Padrão de resposta (STATUS 200):
 
 ```json
 {
-    "id": number,
-    "title": string,
-    "description": string,
-    "userId": number
+    "id": "number",
+    "title": "string",
+    "description": "string",
+    "userId": "number"
 }
 ```
 
@@ -159,7 +159,7 @@ Padrão de corpo:
 
 ```json
 {
-    "id": number
+    "id": "number"
 }
 ```
 
@@ -181,9 +181,9 @@ Padrão de corpo:
 
 ```json
 {
-    "name": string,
-    "email": string,
-    "linkedin": string
+    "name": "string",
+    "email": "string",
+    "linkedin": "string"
 }
 ```
 
@@ -191,11 +191,11 @@ Padrão de resposta (STATUS 201):
 
 ```json
 {
-    "id": number,
-    "name": string,
-    "email": string,
-    "linkedin": string,
-    "opportunityId": number
+    "id": "number",
+    "name": "string",
+    "email": "string",
+    "linkedin": "string",
+    "opportunityId": "number"
 }
 ```
 
@@ -205,7 +205,7 @@ Padrão de corpo:
 
 ```json
 {
-    "id": number
+    "id": "number"
 }
 ```
 
@@ -213,11 +213,11 @@ Padrão de resposta (STATUS 200):
 
 ```json
 {
-    "id": number,
-    "name": string,
-    "email": string,
-    "linkedin": string,
-    "opportunityId": number,
+    "id": "number",
+    "name": "string",
+    "email": "string",
+    "linkedin": "string",
+    "opportunityId": "number",
 }
 ```
 
@@ -243,9 +243,9 @@ Padrão de corpo:
 
 ```json
 {
-    "name": string;
-    "email": string;
-    "password": string;
+    "name": "string",
+    "email": "string",
+    "password": "string",
 }
 ```
 
@@ -253,9 +253,9 @@ Padrão de resposta (STATUS 201):
 
 ```json
 {
-    "id": number;
-    "name": string;
-    "email": string;
+    "id": "number",
+    "name": "string",
+    "email": "string",
 }
 ```
 
@@ -265,8 +265,8 @@ Padrão de corpo:
 
 ```json
 {
-    "email": string;
-    "password": string;
+    "email": "string",
+    "password": "string",
 }
 ```
 
@@ -274,11 +274,11 @@ Padrão de resposta (STATUS 200):
 
 ```json
 { 
-    accessToken: token,
+    "accessToken": "string",
     {
-        "id": number;
-        "name": string;
-        "email": string;
+        "id": "number",
+        "name": "string",
+        "email": "string",
     }
 }
 ```
@@ -319,9 +319,9 @@ Padrão de corpo:
 
 ```json
 {
-    "id": number;
-    "name": string;
-    "email": string;
+    "id": "number",
+    "name": "string",
+    "email": "string",
 }
 ```
 
@@ -329,9 +329,9 @@ Padrão de resposta (STATUS 201):
 
 ```json
 {
-    "id": number;
-    "name": string;
-    "email": string;
+    "id": "number",
+    "name": "string",
+    "email": "string",
 }
 ```
 
