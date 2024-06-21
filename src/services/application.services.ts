@@ -18,5 +18,5 @@ export class ApplicationServices {
         })
 
         return data;
-    }
+    } 
 }

@@ -10,4 +10,4 @@ export const applicationSchema = z.object({
 
 export const applicationCreateSchema = applicationSchema.omit({ id: true, opportunityId: true});
 
-export type TApplicationCreate = z.infer<typeof applicationCreateSchema>
+export type TApplicationCreate = z.infer<typeof applicationCreateSchema> 
