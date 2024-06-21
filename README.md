@@ -1,12 +1,18 @@
 # API Autenticação e Autorização
 
+
+
 Rode o comando para executar a migração do banco de dados: 
 
 ```bash
 npm run migrate:dev
 ```
 
+
+
 **Será essencial ter um banco de dados criado e referenciado na variável de ambiente**
+
+
 
 Rode o comando abaixo para iniciar a aplicação:
 
@@ -14,18 +20,23 @@ Rode o comando abaixo para iniciar a aplicação:
 npm run dev
 ```
 
+
 Esse projeto possui 3 rotas principais:
 
 - Opportunity
 - Applications 
 - Users
 
+
+
 ## Opportunity
+
 
 ### Possíveis Erros - Legenda
 
 - 403 - UNAUTHORIZED - Token inválido
 - 403 - UNAUTHORIZED - Você não é o autor dessa opportunidade
+
 
 ```json
 {
@@ -42,6 +53,8 @@ Esse projeto possui 3 rotas principais:
 
 
 Dentro da rota de opportunity, podemos:
+
+
 
 
 **`Create - /opportunities POST`**
@@ -66,9 +79,12 @@ Padrão de resposta (STATUS 201):
 }
 ```
 
+
 ### Possíveis Erros 
 
 403 - UNAUTHORIZED - Token inválido
+
+
 
 
 **`FindMany - /opportunities ou /opportunties/user GET`**
@@ -95,6 +111,8 @@ Padrão de resposta (STATUS 200):
 ### Possíveis Erros 
 
 403 - UNAUTHORIZED - Token inválido
+
+
 
 **`FindOne - /opportunities/:id GET`**
 
@@ -126,6 +144,8 @@ Padrão de resposta (STATUS 200):
 403 - UNAUTHORIZED - Token inválido
 403 - UNAUTHORIZED - Você não é o autor dessa opportunidade
 
+
+
 **`Update - /opportunities/:id PATCH`**
 
 Padrão de corpo:
@@ -153,6 +173,8 @@ Padrão de resposta (STATUS 200):
 403 - UNAUTHORIZED - Token inválido
 403 - UNAUTHORIZED - Você não é o autor dessa opportunidade
 
+
+
 **`Delete - /opportunities/:id DELETE`**
 
 Padrão de corpo:
@@ -171,9 +193,12 @@ STATUS DE RESPOSTA (204)
 403 - UNAUTHORIZED - Você não é o autor dessa opportunidade
 
 
+
+
 ## Applications
 
 Dentro da rota de Applications, podemos:
+
 
 **`Create - /opportunities/:id/applications POST`**
 
@@ -198,6 +223,8 @@ Padrão de resposta (STATUS 201):
     "opportunityId": "number"
 }
 ```
+
+
 
 **`FindMany - /opportunities/:id/applications GET`**
 
@@ -231,11 +258,14 @@ Padrão de resposta (STATUS 200):
 }
 ```
 
+
+
 ## Users 
 
 Dentro da rota Users, podemos:
 
 *Nas rotas de usuário, é importante não retornar a senha*
+
 
 **`Register - Registrar usuários /users POST`**
 
@@ -258,6 +288,8 @@ Padrão de resposta (STATUS 201):
     "email": "string",
 }
 ```
+
+
 
 **`Login - /users/login POST`**
 
@@ -300,6 +332,7 @@ Padrão de resposta (STATUS 200):
     "message": "Credentials not valid"
 }
 ```
+
 
 
 **`getUser - /user GET (Precisa de autorização)`**
