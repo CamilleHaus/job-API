@@ -1,18 +1,22 @@
 import { Request, Response } from "express";
 import { OpportunityServices } from "../services/opportunity.services";
+import { inject, injectable } from "tsyringe";
 
+@injectable()
 export class OpportunityControllers {
 
-    private opportunityServices = new OpportunityServices();
+    constructor(@inject("OpportunityServices") private opportunityServices: OpportunityServices) {}
 
     async create(req: Request, res: Response) {
+        const id = res.locals.decode?.id
 
-        const response = await this.opportunityServices.create(req.body);
+        const response = await this.opportunityServices.create(req.body, id);
 
         return res.status(201).json(response)
     }
 
     async findMany(req: Request, res: Response) {
+        const id = res.locals.decode?.id
 
         const response = await this.opportunityServices.findMany();
 

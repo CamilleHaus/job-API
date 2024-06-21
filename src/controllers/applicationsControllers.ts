@@ -1,10 +1,11 @@
 import { Request, Response } from "express";
 import { ApplicationServices } from "../services/application.services";
+import { inject, injectable } from "tsyringe";
 
-
+@injectable()
 export class ApplicationControllers {
 
-    private applicationServices = new ApplicationServices();
+    constructor(@inject("ApplicationServices") private applicationServices: ApplicationServices) {}
 
     async create(req: Request, res: Response) {
          const response = await this.applicationServices.create(req.body, Number(req.params.id));

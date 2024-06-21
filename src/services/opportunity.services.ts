@@ -1,16 +1,22 @@
+import { injectable } from "tsyringe";
 import { prisma } from "../database/prisma";
 import { TOpportunity, TOpportunityCreate, TOpportunityUpdate } from "../schemas/opportunity.schemas";
 
+@injectable()
 export class OpportunityServices {
 
-    async create(body: TOpportunityCreate) {
-        const data = await prisma.opportunity.create({ data: body });
+    async create(body: TOpportunityCreate, userId: number) {
+        const newOpportunity = {...body, userId}
+        
+        const data = await prisma.opportunity.create({ data: newOpportunity });
 
         return data;
     }
 
-    async findMany() {
-        const data = await prisma.opportunity.findMany();
+    async findMany(userId?: number) {
+        const data = await prisma.opportunity.findMany({
+            where: { userId }
+        });
 
         return data;
     }

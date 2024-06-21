@@ -13,12 +13,23 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model User {
+  id Int @id @default(autoincrement())
+  name String
+  email String
+  password String
+  opportunities Opportunity[]
+}
+
 model Opportunity {
   id Int @id @default(autoincrement())
   title String
   description String
 
   applications Application[]
+
+  userId Int
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
 model Application {
@@ -28,5 +39,5 @@ model Application {
   linkedin String
 
   opportunityId Int 
-  opportunity Opportunity @relation(fields: [opportunityId], references: [id])
+  opportunity Opportunity @relation(fields: [opportunityId], references: [id], onDelete: Cascade)
 }

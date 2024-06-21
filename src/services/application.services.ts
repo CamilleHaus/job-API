@@ -1,6 +1,7 @@
+import { injectable } from "tsyringe";
 import { prisma } from "../database/prisma";
 import { TApplicationCreate } from "../schemas/applications.schemas";
-
+@injectable()
 export class ApplicationServices {
 
     async create(body: TApplicationCreate, opportunityId: number) {
