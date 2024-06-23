@@ -2,6 +2,9 @@
   "name": "job-api---backend",
   "version": "1.0.0",
   "main": "index.js",
+  "engines": {
+    "node": "18"
+  },
   "scripts": {
     "build": "npx tsc",
     "start": "node dist/server.js",
